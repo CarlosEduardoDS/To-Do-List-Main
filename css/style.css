@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lexend+Deca:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Josefin Sans;
+}
+
+body{
+    background-color: hsl(235, 21%, 11%);
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+#img-bg{
+    background-image: url(../images/bg-desktop-dark.jpg);
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#subs-bg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 400px;
+    min-height: 81%;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    gap: 30px;
+
+    margin-top: 50px;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+}
+
+#tituloEscuroClaro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#tituloEscuroClaro h1{
+    color: hsl(230, 20%, 94%);
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 6px;
+    font-weight: 700;
+}
+
+#temaCheckbox{
+    display: none;
+}
+
+#botaoTema{
+    background-image: url(../images/icon-moon.svg);
+    height: 22px;
+    width: 22px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#temaCheckbox:checked + #botaoTema{
+    background-image: url(../images/icon-sun.svg);
+}
+
+#novaNota, .notaUnidade, #foraDasNotas{
+    background-color: hsl(235, 24%, 19%);
+}
+
+#notas{
+    width: 100%;
+    height: 100%;
+}
+
+#caixaDeNotas{
+    box-shadow: 0px 60px 40px 5px #00000071;
+}
+
+#novaNota{
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+input[type="text"] {
+    caret-color: hsl(220, 98%, 61%);
+    font-size: 14px;
+    color: hsl(234, 39%, 85%);
+    vertical-align: baseline;
+}
+
+#notas ul .notaUnidade:first-of-type {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: none;
+}
+
+#digiteAqui{
+    background-color: #00000000;
+    border: 0;
+    width: 85%;
+}
+
+#digiteAqui:focus{
+    outline: 0;
+}
+
+.notaUnidade{
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+    gap: 18px;
+
+    padding: 18px;
+    box-sizing: border-box;
+    
+    border-top: 1px solid hsl(233, 14%, 35%);
+
+    position: relative;
+}
+
+.notaUnidade .textoNotas{
+    color: hsl(234, 39%, 85%);
+    font-size: 14px;
+}
+
+.botaoCheck {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid hsl(233, 14%, 35%);
+
+    cursor: pointer;
+}
+
+.botaoCheck:hover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.todosCheckBox:not(:checked) + .botaoCheck:hover .borderRadius{
+    display: block;
+    background-color: hsl(235, 24%, 19%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
+
+.borderRadius{
+    display: none;
+}
+
+.todosCheckBox{
+    display: none;
+}
+
+.todosCheckBox:checked + .botaoCheck {
+    background: 
+        url(../images/icon-check.svg) center/11px 9px no-repeat,
+        linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%)); 
+
+}
+
+.todosCheckBox:checked + .botaoCheck + .textoNotas{
+    text-decoration: line-through;
+    color: hsl(233, 14%, 35%);
+}
+
+.notaUnidade:hover .removerNota{
+    display: flex;
+}
+
+.removerNota{
+    display: none;
+    align-items: center;
+    justify-content: end;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    cursor: pointer;
+    color: hsl(233, 14%, 35%);
+
+}
+
+.removerNota img{
+    pointer-events: none;
+}
+
+.notaUnidade span{
+    color: hsl(236, 33%, 92%);
+    width: 80%;
+}
+
+#foraDasNotas{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 40px;
+
+    padding-inline: 18px;
+    box-sizing: border-box;
+
+    border-top: 1px solid hsl(233, 14%, 35%);
+}
+
+.opcoes, #textoRodape, #contador{
+    color: hsl(233, 14%, 35%);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.botoesFilho:hover .opcoes{
+    color: hsl(236, 33%, 92%);
+    cursor: pointer;
+}
+
+#botaoLimparCumpridos:hover .opcoes{
+    color: hsl(236, 33%, 92%);
+}
+
+.opcoes{
+    pointer-events: none;
+}
+
+.filtrosPai{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+
+}
+
+.filtrosFilho{
+    font-weight: 900;
+}
+
+.filtroSelecionado > p{
+    color: hsl(220, 98%, 61%) !important;
+}
+
+.botoesFilho{
+    background-color: hsla(235, 24%, 19%, 0);
+    border: 0;
+    cursor: pointer;
+}
+
+#botaoLimparCumpridos{
+    background-color: hsla(0, 0%, 0%, 0);
+    border: 0;
+    cursor: pointer;
+
+}
+
+#botaoLimparCumpridos:active .opcoes{
+    color: hsl(220, 98%, 61%);
+}
+
+#filtrosResponsivo{
+    display: none;
+}
+
+.img-bg-light{
+    background-image: url(../images/bg-desktop-light.jpg) !important;
+}
+
+.opcoesLightMode{
+    color: hsl(236, 9%, 61%) !important;
+}
+
+.opcoesLightMode:hover{
+    color: hsl(235, 19%, 35%) !important;
+}
+
+#botaoLimparCumpridos:active .opcoesLightMode{
+    color: hsl(220, 98%, 61%) !important;
+}
+
+.borderRadiusLightMode{
+    display: none;
+}
+
+.todosCheckBox:not(:checked) + .botaoCheck:hover .borderRadiusLightMode{
+    display: block;
+    background-color: hsl(0, 0%, 98%) !important;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
+
+.textoNotasLightMode{
+    color: hsl(235, 19%, 35%) !important;
+}
+
+.todosCheckBox:checked + .botaoCheck + .textoNotasLightMode{
+    text-decoration: line-through;
+    color: hsl(233, 11%, 84%) !important;
+}
+
+.caixaDeNotasLightMode{
+    box-shadow: 0px 50px 70px 1px #00000025 !important;
+}
+
+
+@media(max-width:450px){
+    #img-bg{
+        background-image: url(../images/bg-mobile-dark.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    #img-bg .img-bg-light{
+        background-image: url(../images/bg-mobile-light.jpg) !important;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        object-position: center;
+    }
+}

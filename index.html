@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/scripts.js" defer></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Todo app</title>
+</head>
+
+<body>
+  <div id="img-bg"></div>
+
+  <div id="subs-bg">
+
+    <div id="tituloEscuroClaro">
+      <h1>
+        Todo
+      </h1>
+      <input type="checkbox" id="temaCheckbox" name="temaCheckbox"></input>
+      <label for="temaCheckbox" id="botaoTema"></label>
+    </div>
+
+
+    <div id="notas">
+      <div id="novaNota" class="notaUnidade unidadeModoClaro">
+        <input type="checkbox" id="novaNotaCheckbox" class="todosCheckBox"></input>
+        <label for="novaNotaCheckbox" class="botaoCheck">
+          <div class="borderRadius"></div>
+        </label>
+        <input id="digiteAqui" class="textoNotas" type="text" placeholder="Create a new Todo...">
+      </div>
+      <ul id="caixaDeNotas">   
+      </ul>
+      <div id="foraDasNotas" class="unidadeModoClaro">
+        <p id="contador"><span id="numeroContador">0</span> items left</p>
+
+        <div class="filtrosPai">
+          <button id="botaoAll" class="botoesFilho">
+            <p class="opcoes filtrosFilho">All</p>
+          </button>
+          <button id="botaoActive" class="botoesFilho">
+            <p class="opcoes filtrosFilho">Active</p>
+          </button>
+          <button  id="botaoCompleted" class="botoesFilho">
+            <p class="opcoes filtrosFilho">Completed</p>
+          </button>
+        </div>
+
+        <button id="botaoLimparCumpridos">
+          <p class="opcoes">Clear Completed</p>
+        </button>
+
+      </div>
+    </div>
+
+    <p id="textoRodape">Drag and drop to reorder list</p>
+
+    <div id="filtrosResponsivo" class="filtrosPai">
+      <button class="botoesFilho">
+        <p class="opcoes filtrosFilho">All</p>
+      </button>
+      <button class="botoesFilho">
+        <p class="opcoes filtrosFilho">Active</p>
+      </button>
+      <button class="botoesFilho">
+        <p class="opcoes filtrosFilho">Completed</p>
+      </button>
+    </div>
+  </div>
+
+</body>
+
+</html>
