@@ -276,8 +276,8 @@ input[type="text"] {
     display: none;
 }
 
-.img-bg-light{
-    background-image: url(../images/bg-desktop-light.jpg) !important;
+#img-bg.img-bg-light{
+    background-image: url(../images/bg-desktop-light.jpg);
 }
 
 .opcoesLightMode{
@@ -319,6 +319,31 @@ input[type="text"] {
 
 
 @media(max-width:450px){
+    #tituloEscuroClaro h1{
+        font-size: 26px;
+        letter-spacing: 5px;
+    }
+
+    .notaUnidade{
+        padding: 12px;
+        min-height: 45px;
+        gap: 15px;       
+    }
+
+    .botaoCheck{
+        height: 15px;
+        width: 15px;
+    }
+
+    .removerNota img{
+        width: 14px;
+        height: 14px;
+    }
+
+    .notaUnidade .textoNotas{
+        font-size: 11px;
+    }
+
     #img-bg{
         background-image: url(../images/bg-mobile-dark.jpg);
         background-repeat: no-repeat;
@@ -329,7 +354,7 @@ input[type="text"] {
         object-position: center;
     }
 
-    #img-bg .img-bg-light{
+    #img-bg.img-bg-light{
         background-image: url(../images/bg-mobile-light.jpg) !important;
         background-repeat: no-repeat;
         background-size: contain;
@@ -337,5 +362,13 @@ input[type="text"] {
         height: 500px;
         object-fit: cover;
         object-position: center;
+    }
+
+    #subs-bg{
+        width: 300px;
+    }
+
+    .opcoes, #textoRodape, #contador{
+        font-size: 9px;
     }
 }
